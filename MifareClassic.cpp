@@ -83,7 +83,7 @@ NfcTag MifareClassic::read(byte *uid, unsigned int uidLength)
         else
         {
             Serial.print(F("Read failed "));Serial.println(currentBlock);
-            // TODO handle errors here
+            return NfcTag(uid, uidLength, "ERROR");
         }
 
         index += BLOCK_SIZE;
